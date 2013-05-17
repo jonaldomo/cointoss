@@ -1,23 +1,92 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Ct View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ctViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Coin Toss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9X0-c4-Eh6">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="5xv-Z1-rhC"/>
+                                    <constraint firstAttribute="width" constant="141" id="xhh-Ns-PuE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Select heads or tails" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWU-Bl-6VC">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbo-fS-Xh2">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Heads">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="callHeads" destination="2" eventType="touchUpInside" id="CR1-EM-N0c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-RP-AqZ">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Tails">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="callTails" destination="2" eventType="touchUpInside" id="bE9-4k-omB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9X0-c4-Eh6" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="1oB-d0-iOZ"/>
+                            <constraint firstItem="hbo-fS-Xh2" firstAttribute="leading" secondItem="aWU-Bl-6VC" secondAttribute="leading" type="default" id="1xu-Gh-otW"/>
+                            <constraint firstItem="aWU-Bl-6VC" firstAttribute="top" secondItem="3" secondAttribute="top" constant="54" id="5X6-gt-YTZ"/>
+                            <constraint firstItem="qgz-RP-AqZ" firstAttribute="trailing" secondItem="aWU-Bl-6VC" secondAttribute="trailing" type="default" id="5ho-Kv-BSh"/>
+                            <constraint firstItem="qgz-RP-AqZ" firstAttribute="baseline" secondItem="hbo-fS-Xh2" secondAttribute="baseline" type="default" id="EQU-u5-M4v"/>
+                            <constraint firstItem="9X0-c4-Eh6" firstAttribute="top" secondItem="3" secondAttribute="top" constant="13" id="J6p-uJ-DxV"/>
+                            <constraint firstItem="hbo-fS-Xh2" firstAttribute="top" secondItem="3" secondAttribute="top" constant="252" id="ave-FG-eQw"/>
+                            <constraint firstItem="9X0-c4-Eh6" firstAttribute="centerX" secondItem="aWU-Bl-6VC" secondAttribute="centerX" type="default" id="tx0-pU-1io"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="result" destination="9X0-c4-Eh6" id="1Tb-u3-PbR"/>
+                        <outlet property="status" destination="aWU-Bl-6VC" id="JFy-w3-2kN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ctViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ctViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="callHeads"/>
+                <relationship kind="action" name="callTails"/>
+                <relationship kind="outlet" name="result" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="status" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
