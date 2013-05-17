@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ctViewController : UIViewController
+@interface ctViewController : UIViewController {
+    UILabel *status;
+    UILabel *result;
+}
+
+@property (nonatomic, retain) IBOutlet UILabel * status;
+@property (nonatomic, retain) IBOutlet UILabel *result;
+
+- (IBAction)callHeads;
+- (IBAction)callTails;
 
 @end
